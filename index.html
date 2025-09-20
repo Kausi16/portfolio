@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muthu Kausalya - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff6f61;
+      --secondary: #6a5acd;
+      --accent: #20b2aa;
+      --light: #ffffff;
+      --text: #2b2b2b;
+      --shadow: rgba(0,0,0,0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: url('floral-pattern.png') repeat;
+      background-size: cover;
+    }
+
+    header {
+      text-align: center;
+      padding: 6rem 2rem 5rem;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      margin: 0.5rem 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .cta-buttons button {
+      margin: 0.5rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 12px var(--shadow);
+      transition: all 0.3s;
+    }
+    .cta-buttons button:hover {
+      background: #178f87;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 160px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    .about, .education, .certifications, .testimonial {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 3rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 12px var(--shadow);
+    }
+
+    .skills {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .skills-grid {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .skills-grid div {
+      flex: 1 1 220px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .skills-grid div:hover {
+      transform: translateY(-6px);
+    }
+    .skills-grid h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--secondary);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .projects .project-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 14px var(--shadow);
+      transition: transform 0.3s;
+    }
+    .projects .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+    .project-desc {
+      margin-bottom: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+    }
+    .project-btn {
+      display: inline-block;
+      padding: 0.9rem 1.5rem;
+      background: var(--primary);
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: all 0.3s;
+    }
+    .project-btn:hover {
+      background: var(--secondary);
+    }
+
+    .education p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .certifications h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+    .certifications p {
+      margin: 0 0 0.8rem;
+      font-size: 1rem;
+    }
+
+    .contact ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .contact li {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: transform 0.3s;
+    }
+    .contact li:hover {
+      transform: translateY(-6px);
+    }
+
+    .testimonial blockquote {
+      background: rgba(255,255,255,0.95);
+      padding: 2rem;
+      border-left: 6px solid var(--primary);
+      font-style: italic;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px var(--shadow);
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="kausalya.jpg" alt="Muthu Kausalya">
+    <h1>Muthu Kausalya</h1>
+    <p>Transforming Raw Data into Cheerful Solutions!</p>
+    <div class="cta-buttons">
+      <button onclick="viewResume()">Download Resume</button>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I am an aspiring data analyst with a strong foundation in analytics tools and techniques. I enjoy building dashboards that not only look creative but also simplify complex data into clear insights. My interest lies in turning numbers into meaningful stories, and I bring creativity, adaptability, and problem-solving skills to every project I work on.</p>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <h3>Web</h3>
+        <p>HTML, CSS, JS</p>
+      </div>
+      <div>
+        <h3>Tools</h3>
+        <p>Excel, Tableau, Power BI, Advanced Excel</p>
+      </div>
+      <div>
+        <h3>Programming</h3>
+        <p>Python, R, MySQL</p>
+      </div>
+      <div>
+        <h3>Soft Skills</h3>
+        <p>Communication, Time Management, Leadership, Adaptability, Problem Solving</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <div class="project-title">Sales Performance Dashboard (Excel)</div>
+      <p class="project-desc">Created an interactive dashboard using pivot tables, charts, and slicers. Analyzed regional and monthly sales performance. Highlighted insights such as North region driving 40% of sales.</p>
+      <a class="project-btn" href="Sales Dashboard.png" target="_blank">Excel Dashboard</a>
+    </div>
+    <div class="project-card">
+      <div class="project-title">Movie Ratings Analysis (Python, Pandas, Matplotlib)</div>
+      <p class="project-desc">Cleaned and analyzed 20K+ movie records with Python. Performed EDA on genres, ratings, and release trends. Found key insights like documentaries having the highest average ratings.</p>
+      <a class="project-btn" href="https://f1khtxf2-8501.inc1.devtunnels.ms/" target="_blank">Python Analysis</a>
+    </div>
+    <div class="project-card">
+      <div class="project-title">Interactive Sales Dashboard (Tableau)</div>
+      <p class="project-desc">Built and published an interactive sales dashboard with KPIs and drilldowns. Added filters for region, product, and year to enable dynamic analysis. Delivered insights on regional profits and product performance.</p>
+      <a class="project-btn" href="tableau-dashboard.png" target="_blank">Tableau Dashboard</a>
+    </div>
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+    <p><strong>Francis Xavier Engineering College</strong><br>
+    BE in Electronics and Communication Engineering<br>
+    2020 – 2024 | CGPA: 7.89</p>
+  </section>
+
+  <section class="certifications">
+    <h2>Certifications & Training</h2>
+    <h3>Deep Learning with Python</h3>
+    <p>Internship at Iconix Software Solution, Tirunelveli – Worked on Python-based deep learning concepts and mini-projects.</p>
+
+    <h3>Data Analytics Course</h3>
+    <p>6-month program (April–September 2025) at Elysium Group of Companies – Covered data wrangling, visualization, and BI tools.</p>
+
+    <h3>Fundamentals of Digital Marketing</h3>
+    <p>Certification by Google Garage – Learned SEO, social media strategy, and online branding basics.</p>
+  </section>
+
+  <section class="testimonial">
+    <h2>My Belief</h2>
+    <blockquote>“I believe data should not just be numbers on a sheet but a story that drives decisions. My projects reflect this belief — blending creativity with analysis to deliver insights that are clear, meaningful, and actionable.”</blockquote>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:16kausi16@gmail.com">16kausi16@gmail.com</a></li>
+      <li><strong>Phone:</strong> 7904608436</li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muthukausalya-839a032b2" target="_blank">linkedin.com/in/muthukausalya-839a032b2</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/Kausi16" target="_blank">github.com/Kausi16</a></li>
+      <li><strong>Instagram:</strong> <a href="https://www.instagram.com/kausalya_1601_/" target="_blank">@kausalya_1601_</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Muthu Kausalya. All Rights Reserved.
+  </footer>
+
+  <script>
+    function viewResume(){
+      window.open('resume.pdf','_blank');
+    }
+  </script>
+</body>
+</html>
